@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
 
-        <link rel="stylesheet" href="css/footer.css" />
-        <link rel="stylesheet" href="css/header.css" />
-        <link rel="stylesheet" href="css/main.css" />
-    </head>
-    <body></body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Challenge Team 3</title>
+
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+        <!-- seo meta -->
+    <meta name="description"
+        content="Blog Team 3 for CSS Challenge.">
+    <meta name="keywords" content="Blog, Team 3, CSS">
+    <meta name="author" content="Deni Darta, Syifaa, Tommy Poernomo, D'rollins Wiiliam">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="#" aria-label="Blog Team 3">Blog Team 3</a>
+        </div>
+
+        <button class="hamburger-menu" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+        </button>
+
+        <nav class="primary-navigation" id="primary-navigation" data-visible="false">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main></main>
+    <footer>
+    </footer>
+    <script>
+        const nav = document.querySelector('.primary-navigation');
+        const navToggle = document.querySelector('.hamburger-menu');
+
+        navToggle.addEventListener('click', () => {
+            // Ambil status menu saat ini
+            const visibility = nav.getAttribute('data-visible') === "true";
+
+            if (visibility) {
+                // Jika terlihat, sembunyikan
+                nav.setAttribute('data-visible', "false");
+                navToggle.setAttribute('aria-expanded', "false");
+            } else {
+                // Jika tersembunyi, tampilkan
+                nav.setAttribute('data-visible', "true");
+                navToggle.setAttribute('aria-expanded', "true");
+            }
+        });
+    </script>
+</body>
+
 </html>
