@@ -1,0 +1,23 @@
+.left p :first-child {
+    text-align: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .flex-row {
+        flex-direction: row;
+    }
+}
