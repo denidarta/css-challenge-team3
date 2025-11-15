@@ -1,0 +1,51 @@
+.left p :first-child {
+    text-align: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 16px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-self: stretch;
+    border: 1px solid #000;
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.right figure {
+    margin: 0px;
+}
+
+.right figure img {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .flex-row {
+        flex-direction: row;
+    }
+
+    .right {
+        min-width: 200px;
+        justify-content: flex-start;
+        height: fit-content;
+    }
+}
