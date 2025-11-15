@@ -1,0 +1,189 @@
+:root{
+	--footer-bg: #202731;
+	--text: #c9d1d9;
+	--muted: #9aa4ad;
+	--accent: #ffffff;
+}
+
+footer{
+	background: var(--footer-bg);
+	color: var(--text);
+	box-sizing: border-box;
+	padding: 2rem 1rem;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.footer-inner{
+	max-width: 1100px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem;
+}
+
+.footer-brand h3{
+	color: var(--accent);
+	font-size: 1.25rem;
+	margin: 0 0 0.5rem 0;
+}
+
+.footer-brand p{
+	color: var(--muted);
+	line-height: 1.6;
+	margin: 0 0 0.5rem 0;
+	max-width: 35ch;
+}
+
+.footer-links h4,
+.footer-follow h4{
+	color: var(--accent);
+	margin: 0 0 0.75rem 0;
+	font-size: 1rem;
+}
+
+.footer-links ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	gap: 0.6rem;
+}
+
+.footer-links a{
+	color: var(--muted);
+	text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus{
+	color: var(--text);
+	text-decoration: underline;
+}
+
+.social{
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+}
+
+.social-btn{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	color: var(--muted);
+	background: rgba(255,255,255,0.02);
+	text-decoration: none;
+}
+
+.social-btn svg{ display: block; }
+
+.social-btn:focus{
+	outline: 3px solid rgba(255,255,255,0.08);
+}
+
+.footer-bottom{
+	margin-top: 0.75rem;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(255,255,255,0.03);
+	text-align: center;
+}
+
+.footer-bottom p{
+	margin: 0;
+	color: var(--text);
+	font-size: 0.95rem;
+}
+
+@media (min-width: 768px){
+	.footer-inner{
+		grid-template-columns: 1fr 1fr 1fr;
+		align-items: start;
+		gap: 2rem;
+		padding: 1rem 0;
+	}
+
+	.footer-bottom{
+		grid-column: 1 / -1;
+		margin-top: 2rem;
+		text-align: center;
+	}
+}
+
+@media (min-width: 1100px){
+	footer{ padding: 3rem 1rem; }
+	.footer-brand h3{ font-size: 1.5rem; }
+}
+
+a:focus{ outline-offset: 3px; }
+
+/* Team members list (Follow Us) */
+.team{
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.6rem;
+}
+
+.member{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.member-name{
+	color: var(--text);
+	font-weight: 600;
+}
+
+.member-links{
+	display: flex;
+	gap: 0.5rem;
+}
+
+.icon-link{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 6px;
+	background: rgba(255,255,255,0.02);
+	color: var(--muted);
+	text-decoration: none;
+}
+
+.icon-link:hover,
+.icon-link:focus{
+	color: var(--text);
+	background: rgba(255,255,255,0.03);
+}
+
+/* Desktop: show members side-by-side */
+@media (min-width: 768px){
+	.team{
+		grid-template-columns: 1fr;
+	}
+	.member{ gap: 1rem; }
+}
+
+@media (min-width: 1100px){
+	/* Desktop: show members stacked vertically (one column)
+	   with name on the left and icons aligned to the right */
+	.team{
+		grid-template-columns: 1fr;
+		gap: 0.75rem;
+	}
+
+	.member{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.member-links{ margin-top: 0; }
+}
+
